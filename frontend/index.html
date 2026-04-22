@@ -3,25 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Project Evaluator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="container">
-    <h1>🚀 Project Evaluator</h1>
-    <p class="subtitle">Analyze GitHub repositories instantly</p>
+    <div class="container">
+        <h1>🚀 Project Evaluator</h1>
+        <p class="subtitle">Analyze any GitHub repository using AI</p>
 
-    <div class="input-group">
-        <input type="text" id="repoInput" placeholder="https://github.com/user/repo">
-        <button onclick="evaluateRepo()">Evaluate</button>
+        <form id="form">
+            <input 
+                type="text" 
+                id="repoInput" 
+                placeholder="Paste GitHub repo URL (e.g. https://github.com/user/repo)" 
+                required
+            >
+            <button type="submit">Evaluate</button>
+        </form>
+
+        <div id="loading" class="hidden">⏳ Analyzing...</div>
+
+        <div id="result"></div>
+
+        <div id="error" class="hidden"></div>
     </div>
 
-    <p id="loading" class="hidden">🔄 Analyzing project...</p>
-    <p id="error" class="error hidden"></p>
+    <!-- JS -->
+    <script src="script.js"></script>
 
-    <div id="result" class="card hidden"></div>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>
