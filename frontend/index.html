@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Evaluator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🚀 Project Evaluator</h1>
+    <p class="subtitle">Analyze GitHub repositories instantly</p>
+
+    <div class="input-group">
+        <input type="text" id="repoInput" placeholder="https://github.com/user/repo">
+        <button onclick="evaluateRepo()">Evaluate</button>
+    </div>
+
+    <p id="loading" class="hidden">🔄 Analyzing project...</p>
+    <p id="error" class="error hidden"></p>
+
+    <div id="result" class="card hidden"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
