@@ -1,89 +1,65 @@
-
+/* ===== GLOBAL ===== */
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #020617, #020c1f);
+  color: white;
 }
 
-/* Main container */
-.container {
-    width: 420px;
-    padding: 40px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
-    text-align: center;
+/* ===== NAV ===== */
+nav {
+  padding: 20px 40px;
+  font-size: 20px;
+  font-weight: 600;
+  background: #020617;
+  border-bottom: 1px solid #0f172a;
 }
 
-/* Title */
-h1 {
-    margin-bottom: 10px;
+/* ===== HERO ===== */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-    font-size: 14px;
-    opacity: 0.8;
+  color: #94a3b8;
+  margin-bottom: 40px;
 }
 
-/* Input */
-.input-group {
-    margin-top: 20px;
+/* ===== MENU ===== */
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
 }
 
-input {
-    width: 90%;
-    padding: 12px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    margin-bottom: 10px;
+/* ===== MENU ITEMS ===== */
+.menu-item {
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
 }
 
-/* Button */
-button {
-    padding: 10px 25px;
-    border-radius: 10px;
-    border: none;
-    background: #00c6ff;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+.menu-item h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
 }
 
-button:hover {
-    background: #0072ff;
+.menu-item p {
+  font-size: 15px;
+  color: #94a3b8;
 }
 
-/* Card */
-.card {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.12);
-    text-align: left;
+.menu-item:hover h3 {
+  color: #3b82f6;
 }
 
-/* Score highlight */
-.score {
-    font-size: 24px;
-    font-weight: bold;
-    color: #00ffcc;
-}
-
-/* Error */
-.error {
-    color: #ff6b6b;
-    margin-top: 10px;
-}
-
-/* Hide elements */
-.hidden {
-    display: none;
+.menu-item:hover {
+  transform: scale(1.05);
 }

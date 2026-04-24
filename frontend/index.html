@@ -1,62 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Project Evaluator</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <style>
-        body {
-            font-family: Arial;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: white;
-        }
-
-        .box {
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        input {
-            padding: 10px;
-            width: 300px;
-            border-radius: 8px;
-            border: none;
-        }
-
-        button {
-            padding: 10px 20px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 8px;
-            background: #00c6ff;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
+  <title>Project Evaluator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="box">
-    <h1>🚀 Project Evaluator</h1>
+<nav>🚀 Project Evaluator</nav>
 
-    <form action="https://project-evaluator-6pfh.onrender.com/evaluate" method="GET">
-        <input 
-            type="text" 
-            name="repo_url"
-            placeholder="Paste GitHub repo URL"
-            required
-        >
-        <br>
-        <button type="submit">Evaluate</button>
-    </form>
-</div>
+<section class="hero">
+
+  <h1>Welcome</h1>
+  <p class="subtitle">Select what you want to do</p>
+
+  <div class="menu">
+
+    <div class="menu-item" onclick="go('')">
+      <h3>📊 Analyze GitHub Project</h3>
+      <p>Get insights, metrics and ML-based score</p>
+    </div>
+
+    <div class="menu-item" onclick="go('compare')">
+      <h3>⚖️ Compare Projects</h3>
+      <p>Compare performance of two repositories</p>
+    </div>
+
+    <div class="menu-item" onclick="go('report')">
+      <h3>📄 Generate Report</h3>
+      <p>View structured project evaluation</p>
+    </div>
+
+    <div class="menu-item" onclick="go('leaderboard')">
+      <h3>🏆 Leaderboard</h3>
+      <p>View top ranked GitHub projects</p>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+function go(mode) {
+  window.location.href = "dashboard.html" + (mode ? "?mode=" + mode : "");
+}
+</script>
 
 </body>
 </html>

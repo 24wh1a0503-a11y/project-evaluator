@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>🚀 Project Evaluator</nav>
+
+<section class="hero">
+  <h1 id="title">Analyze GitHub Project</h1>
+
+  <input id="repo_url" placeholder="Enter GitHub repo URL">
+  <input id="repo_url2" placeholder="Second repo (compare)" style="display:none">
+
+  <button id="analyzeBtn">Analyze</button>
+</section>
+
+<section id="dashboard" style="display:none;">
+
+  <div class="cards">
+    <div class="card">⭐ <span id="stars"></span><p>Stars</p></div>
+    <div class="card">🍴 <span id="forks"></span><p>Forks</p></div>
+    <div class="card">🐞 <span id="issues"></span><p>Issues</p></div>
+    <div class="card">📊 <span id="score"></span><p>Score</p></div>
+    <div class="card">🎓 <span id="grade"></span><p>Grade</p></div>
+  </div>
+
+  <div class="charts">
+    <canvas id="barChart"></canvas>
+  </div>
+
+  <!-- REPORT SECTION -->
+  <div id="reportBox" class="report"></div>
+
+  <!-- LEADERBOARD -->
+  <div id="leaderboardBox" class="leaderboard"></div>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -25,13 +25,17 @@ def evaluate(repo_url: str = Query(...)):
 
         if len(parts) < 5:
             return {"error": "Invalid GitHub URL"}
-
         owner = parts[3]
-        repo = parts[4]
+        repo = parts[4].split("?")[0].strip()
 
         # GitHub API
         api_url = f"https://api.github.com/repos/{owner}/{repo}"
-        response = requests.get(api_url)
+
+        headers = {
+            "User-Agent": "Mozilla/5.0"
+        }
+
+        response = requests.get(api_url, headers=headers)
 
         if response.status_code != 200:
             return {"error": "Repository not found"}
