@@ -1,4 +1,3 @@
-
 let barChart;
 
 const params = new URLSearchParams(window.location.search);
@@ -28,31 +27,42 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// MAIN
+// 🚀 MAIN FUNCTION
 async function evaluateRepo() {
 
   const url = document.getElementById("repo_url").value;
 
-  const res = await fetch(
-    `http://127.0.0.1:8000/evaluate?repo_url=${encodeURIComponent(url)}`
-  );
-
-  const data = await res.json();
-
-  if (data.error) {
-    alert(data.error);
+  if (!url) {
+    alert("Enter GitHub URL");
     return;
   }
 
-  displayData(data);
+  try {
+    const res = await fetch(
+      `https://project-evaluator-1.onrender.com/evaluate?repo_url=${encodeURIComponent(url)}`
+    );
 
-  if (mode === "report") {
-    generateReport(data);
+    const data = await res.json();
+
+    if (data.error) {
+      alert(data.error);
+      return;
+    }
+
+    displayData(data);
+
+    if (mode === "report") {
+      generateReport(data);
+    }
+
+  } catch (err) {
+    console.error(err);
+    alert("Backend not responding ❌");
   }
 }
 
 
-// SHOW DATA
+// 📊 SHOW DATA
 function displayData(data) {
 
   document.getElementById("dashboard").style.display = "block";
